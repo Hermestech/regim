@@ -1,7 +1,12 @@
 export const theme = {
     colors: {
         primary: '#0876DD',
-        secondary: '#F5F5F5',
-        tertiary: '#FFFFFF'
+        secondary: '#29d2d3',
+        tertiary: '#FFFFFF',
+        neutral: '#111827',
+    },
+    fonts: {
+        primary: 'Archivo, sans-serif',
+        secondary: 'Inter, sans-serif'
     },
 }
