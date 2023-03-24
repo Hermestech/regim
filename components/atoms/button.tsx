@@ -27,7 +27,7 @@ const StyledButton = styled.button<StyledButtonProps>`
         if (props.size === 'small') {
             return '80px';
         } else if (props.size === 'medium') {
-            return '100px';
+            return '145px';
         } else {
             return '120px';
         }
@@ -78,8 +78,8 @@ const StyledButton = styled.button<StyledButtonProps>`
             return '18px';
         }
     }};
-    padding: 10px 16px;
     border-radius: 6px;
     border: none;
     cursor: pointer;
+    font-size: 14px;
 `

@@ -42,7 +42,7 @@ const sizes: TypographySizes = {
   },
   body: {
     fontSize: '0.875rem',
-    fontWeight: 500,
+    fontWeight: 400,
   },
   bodyxs: {
     fontSize: '0.75rem',
