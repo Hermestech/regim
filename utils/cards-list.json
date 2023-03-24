@@ -5,28 +5,32 @@
             "img_url": "/cards/badge.png"
         },
         {
-            "id": 2,
-            "img_url": "/cards/speaker-card.png"
-        },
-        {
-            "id": 3,
-            "img_url": "/cards/attendees.png"
-        },
-        {
             "id": 4,
             "img_url": "/cards/registration-graph.png"
+        },
+        {
+            "id": 2,
+            "img_url": "/cards/speaker-card.png"
         },
         {
             "id":5,
             "img_url": "/cards/registrations-split-count.png"
         },
         {
-            "id": 6,
-            "img_url": "/cards/ticket-sales.png"
+            "id":10,
+            "img_url": "/cards/ticket.png"
         },
         {
             "id": 8,
             "img_url": "/cards/attendees.png"
+        },
+        {
+            "id": 3,
+            "img_url": "/cards/ticket-sales.png"
+        },
+        {
+            "id": 4,
+            "img_url": "/cards/registration-graph.png"
         }
     ],
     "features_list": [
@@ -66,5 +70,36 @@
             "title": "Add to Calendar",
             "description": "Effortless way to add your eents to registered user calendars by 1-click."
         }
+    ],
+    "list_tools": [
+        {
+            "id": 1,
+            "image_url": "/logos/Logo=slack.svg"
+        },
+        {
+            "id": 2,
+            "image_url": "/logos/Logo=quickbooks.svg"
+        },
+        {
+            "id": 3,
+            "image_url": "/logos/Logo=mailchimp.svg"
+        },
+        {
+            "id": 4,
+            "image_url": "/logos/Logo=hubspot.svg"
+        },
+        {
+            "id": 5,
+            "image_url": "/logos/Logo=zapier.svg"
+        },
+        {
+            "id": 6,
+            "image_url": "/logos/Logo=google-analytics.svg"
+        },
+        {
+            "id": 7,
+            "image_url": "/logos/Logo=marketo.svg"
+        }
+
     ]
 }

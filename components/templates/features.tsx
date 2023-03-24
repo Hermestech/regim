@@ -33,7 +33,8 @@ export const Features = () => {
                     All-in-one Event Platform
             </Typography>
             <Typography
-                variant="bodymd"
+              variant="bodymd"
+                as={'p'}
                 >
                 Deliver an exceptional event experience
             </Typography>    
@@ -116,4 +117,5 @@ const FeatureTitle = styled.div`
     align-items: center;
     justify-content: center;
     margin-bottom: 48px;
+    gap: 1rem;
 `

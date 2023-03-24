@@ -29,7 +29,7 @@ const StyledButton = styled.button<StyledButtonProps>`
         } else if (props.size === 'medium') {
             return '145px';
         } else {
-            return '120px';
+            return '160px';
         }
     }};
     
