@@ -52,7 +52,6 @@ export const Features = () => {
     </FeatureSection>
     )
 }
-const FeatureDescription = styled.p``;
 
 const Button = styled.button`
   height: 48px;
@@ -98,6 +97,10 @@ const FeaturesWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, minmax(250px, 1fr));
   grid-gap: 80px;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, minmax(200px, 1fr));
+  }
 `;
 
 const Feature = styled.div`

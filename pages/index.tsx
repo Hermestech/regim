@@ -1,5 +1,3 @@
-import Head from 'next/head'
-import Image from 'next/image'
 import { Hero } from '@/components/templates/hero'
 import { Features } from '@/components/templates/features'
 import { Tools } from '@/components/templates/tools'

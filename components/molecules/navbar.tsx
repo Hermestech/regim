@@ -25,4 +25,10 @@ const StyledNavbar = styled.nav`
     align-items: center;
     padding: 20px 116px 20px 80px;
     height: 5rem;
+    @media (max-width: 768px) {
+        padding: 20px 40px;
+    }
+    @media (max-width: 375px) {
+        padding: 0 20px;
+    }
     `

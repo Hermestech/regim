@@ -52,6 +52,10 @@ const StyledTools = styled.section`
     align-items: center;
     border-top: 1px solid #E5E7EB;
     margin: 0 auto;
+    @media (max-width: 768px) {
+        background-position: top center;
+        background-size: 100%;
+    }
 `
 
 const TwoColumns = styled.div`
@@ -59,6 +63,9 @@ const TwoColumns = styled.div`
     height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
 `
 
 const StyledLeftColumn = styled.div`
@@ -76,6 +83,9 @@ const StyledLeftColumn = styled.div`
         flex-direction: column;
         justify-content: space-between;
         gap: 2rem;
+        @media (max-width: 768px) {
+            text-align: center;
+        }
     }
 `
 
@@ -93,5 +103,8 @@ const StyledRightColumn = styled.div`
         flex-wrap: wrap;
         justify-content: space-evenly;
         align-items: flex-start;
+        @media (max-width: 768px) {
+            margin-top: -150px;
+        }
     }
 `

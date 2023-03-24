@@ -19,4 +19,10 @@ const StyledHero = styled.main`
     background-repeat: no-repeat;
     background-position: top right;
     background-size: 42%;
+    @media (max-width: 768px) {
+        background-image: url('/ellipse-tablet.svg');
+        background-position: bottom right;
+        background-size: 90%;
+        height: 110vh;
+    }
 `
