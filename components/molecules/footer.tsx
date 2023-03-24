@@ -102,7 +102,6 @@ export const Footer = () => {
           <Button
               variant="primary"
               size="large"
-              onClick={() => console.log("clicked")}
               label="Get Early Access"
           />  
      </StyledFooter>

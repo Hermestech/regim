@@ -5,9 +5,10 @@ import { theme } from '@/theme/theme';
 
 export interface ButtonProps {
     label: string;
-    onClick: () => void;
+    onClick?: () => void;
     size?: 'small' | 'medium' | 'large';
     variant?: 'primary' | 'secondary' | 'tertiary';
+    type?: 'button' | 'submit' | 'reset';
 }
 
 type StyledButtonProps = Omit <ButtonProps, 'label'>;

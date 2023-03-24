@@ -13,7 +13,6 @@ interface IFeature {
 }
 
 const mapFeaturesToCards = (features: IFeature[], isMobile: boolean) => { 
-  console.log(isMobile)
     return features.map((feature) => (
     <Feature key={feature.id}>
       <FlexContainer>
@@ -52,7 +51,7 @@ export const Features = () => {
             </FeatureTitle>
       <VideoWrapper>
         <Video controls >
-          <source src="https://www.youtube.com/embed/oOu8ItOGgF8" type="video/mp4" />
+          <source src="/videos/final.mp4" />
 
         </Video>
         <Button>See it in action (2min)</Button>        

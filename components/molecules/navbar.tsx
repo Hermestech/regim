@@ -11,7 +11,6 @@ export const Navbar = () => {
                 size='medium'
                 label="Ger Early Access"
                 variant='primary'
-                onClick={() => {console.log('clicked')}}
             />
         </StyledNavbar>
     )
