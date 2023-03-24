@@ -1,5 +1,7 @@
 import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/store/store';
 
 const appear = keyframes`
     from {
@@ -29,12 +31,12 @@ const Column = styled.div`
     margin-top: 1rem;
 `;
 
-const BackgroundImage = styled.div<{ imgUrl: string; height: string }>`
+const BackgroundImage = styled.div<{ imgUrl: string; height: string; animationEnabled: boolean }>`
     background-image: url(${(props) => props.imgUrl});
     background-size: cover;
     background-position: center;
     height: ${(props) => props.height};
-    animation: ${appear} 1s ease-in-out;
+    animation: ${(props) => (props.animationEnabled ? appear : 'none')} 2s ease-in-out;
     margin-bottom: 1rem;
     width: 180px;
     border-radius: 1rem;
@@ -50,6 +52,8 @@ interface Props {
 }
 
 export const Masonry: React.FC<Props> = ({ cards }) => {
+    const scrollPosition = useSelector((state: RootState) => state.scroll.position);
+
     const customLayout = [
         { height: 'calc(40% - 0.5rem)' },
         { height: 'calc(30% - 0.5rem)' },
@@ -71,6 +75,7 @@ export const Masonry: React.FC<Props> = ({ cards }) => {
                             key={cards[index].id}
                             imgUrl={cards[index].img_url}
                             height={customLayout[index].height}
+                            animationEnabled={scrollPosition === 'top'}
                         />
                     ))}
                 </Column>
