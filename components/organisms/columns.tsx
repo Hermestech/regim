@@ -21,7 +21,7 @@ export const Columns = () => {
                         Event Registration Reimagined
                     </Typography>
                 <Typography
-                    variant='bodylg'
+                    variant={isMobile ? 'body' : 'bodylg'}
                     style={{ color: '#374151' }}    
                     >Manage your event registrations hassle free and without any dependency with the technical team. Isn`t it sounds amazing?
                 </Typography>
@@ -62,6 +62,9 @@ const StyledLeftColumn = styled.div`
         flex-direction: column;
         max-width: 592px;
         gap: 1.5rem;
+    }
+    @media (max-width: 500px) {
+        padding: 1rem;
     }
 `
 

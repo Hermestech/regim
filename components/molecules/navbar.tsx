@@ -28,7 +28,7 @@ const StyledNavbar = styled.nav`
     @media (max-width: 768px) {
         padding: 20px 40px;
     }
-    @media (max-width: 375px) {
+    @media (max-width: 500px) {
         padding: 0 20px;
     }
     `

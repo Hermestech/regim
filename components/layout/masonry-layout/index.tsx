@@ -1,6 +1,5 @@
 import * as React from 'react';
 import styled, { keyframes } from 'styled-components';
-import { Card } from '@/components/atoms/card';
 
 const appear = keyframes`
     from {
@@ -18,6 +17,9 @@ const MasonryLayout = styled.div`
     display: flex;
     justify-content: space-between;
     gap: 1rem;
+    @media screen and (max-width: 500px) {
+        width: 350px;
+    }
 `;
 
 const Column = styled.div`
@@ -37,6 +39,9 @@ const BackgroundImage = styled.div<{ imgUrl: string; height: string }>`
     width: 180px;
     border-radius: 1rem;
     box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+    @media screen and (max-width: 500px) {
+        width: 110px;
+    }
 `;
 
 

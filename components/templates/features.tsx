@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Typography from "../atoms/typography";
 import cards from "@/utils/cards-list.json";
 import Image from "next/image";
+import { useMobile } from "@/hooks/useMobile";
 
 interface IFeature { 
     id: number;
@@ -11,19 +12,28 @@ interface IFeature {
     description: string;
 }
 
-const mapFeaturesToCards = (features: IFeature[]) => { 
+const mapFeaturesToCards = (features: IFeature[], isMobile: boolean) => { 
+  console.log(isMobile)
     return features.map((feature) => (
-        <Feature key={feature.id}>
-            <Image src={feature.image_url} width={88} height={88} alt="icono de caracteristica"/>
-            <Typography variant="title">{feature.title}</Typography>
-            <Typography variant="body" style={{color: '#374151'}}>{ feature.description}</Typography>
-        </Feature>
+    <Feature key={feature.id}>
+      <FlexContainer>
+          <Image
+            src={feature.image_url}
+            width={isMobile ? 56 : 88}
+            height={isMobile ? 56 : 88}
+            alt="icono de caracteristica" />
+        <TextContainer>
+          <Typography variant="title">{feature.title}</Typography>
+          <Typography variant="body" style={{color: '#374151'}}>{feature.description}</Typography>
+        </TextContainer>
+      </FlexContainer>
+    </Feature>
     ))
 }
 
 export const Features = () => { 
     const listOfCards  = cards.features_list;
-
+    const isMobile = useMobile();
     return (
         <FeatureSection>
             <FeatureTitle>
@@ -34,20 +44,21 @@ export const Features = () => {
             </Typography>
             <Typography
               variant="bodymd"
-                as={'p'}
+              as={'p'}
+              style={{color: '#374151'}}
                 >
                 Deliver an exceptional event experience
             </Typography>    
             </FeatureTitle>
       <VideoWrapper>
         <Video controls >
-          <source src="/video.mp4" type="video/mp4" />
+          <source src="https://www.youtube.com/watch?v=pE4ewM57H-4&t=1005s" type="https://www.youtube.com/watch?v=pE4ewM57H-4&t=1005s" />
           <source src="/video.webm" type="video/webm" />
         </Video>
         <Button>See it in action (2min)</Button>        
       </VideoWrapper>
       <FeaturesWrapper>
-        {mapFeaturesToCards(listOfCards)}
+        {mapFeaturesToCards(listOfCards, isMobile)}
       </FeaturesWrapper>
     </FeatureSection>
     )
@@ -66,6 +77,9 @@ const Button = styled.button`
   border: none;
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  @media (max-width: 500px) {
+    width: 200px;
+  }
 `;
 
 const FeatureSection = styled.section`
@@ -85,6 +99,9 @@ const VideoWrapper = styled.div`
   max-width: 800px;
   margin-bottom: 48px;
   position: relative;
+  @media (max-width: 500px) {
+    width: 100%;
+  }
 `;
 
 const Video = styled.video`
@@ -101,24 +118,49 @@ const FeaturesWrapper = styled.div`
   @media (max-width: 768px) {
     grid-template-columns: repeat(2, minmax(200px, 1fr));
   }
+
+  @media (max-width: 500px) { 
+    grid-template-columns: repeat(1, minmax(200px, 1fr));
+  }
 `;
+
 
 const Feature = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  gap: 1rem;
-  padding: 2.3rem;
+  padding: 1rem;
 `;
 
+const FlexContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  @media (max-width: 500px) {
+    flex-direction: row;
+    gap: 1rem;
+    text-align: left;
+  }
+`;
+
+const TextContainer = styled.div`
+  margin-left: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 1rem;
+  @media (max-width: 500px) {
+    margin-left: 0;
+    width: 80%;
+  }
+`;
 
 const FeatureTitle = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     margin-bottom: 48px;
     gap: 1rem;
 `

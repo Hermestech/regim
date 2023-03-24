@@ -25,4 +25,9 @@ const StyledHero = styled.main`
         background-size: 90%;
         height: 110vh;
     }
+    @media (max-width: 500px) {
+        background-image: url('/ellipse-mobile.svg');
+        background-size: 80%;
+        background-position: bottom right;
+    }
 `

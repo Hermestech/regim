@@ -5,7 +5,7 @@ export const useMobile = () => {
 
     React.useEffect(() => { 
         const handleResize = () => { 
-            if (window.innerWidth < 768) { 
+            if (window.innerWidth < 500) { 
                 setIsMobile(true);
             } else { 
                 setIsMobile(false);

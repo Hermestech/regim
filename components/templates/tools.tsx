@@ -3,35 +3,36 @@ import styled from 'styled-components';
 import Typography from '../atoms/typography';
 import Image from 'next/image';
 import cards from '@/utils/cards-list.json';
+import { useMobile } from '@/hooks/useMobile';
 
 interface ITool {
     id: number;
     image_url: string;
 }
 
-const mapToolsToCards = (tools: ITool[]) => { 
+const mapToolsToCards = (tools: ITool[], isMobile: boolean) => { 
     return tools.map((tool) => (
-            <Image src={tool.image_url} width={140} height={120} alt="icono de caracteristica" key={tool.id}/>
+            <Image src={tool.image_url} width={isMobile ? '70' : '120' } height={isMobile ? '70' : '120'} alt="icono de caracteristica" key={tool.id}/>
     ))
 }
 
 export const Tools = () => { 
     const listOfTools = cards.list_tools;
-
+    const isMobile = useMobile();
     return (
         <StyledTools>
             <TwoColumns>
                 <StyledLeftColumn>
                     <div>
-                        <Typography variant="displaylg">Integrate with your favorite tools</Typography>
-                        <Typography variant="bodymd">
+                        <Typography variant={isMobile ? 'displaysm' : 'displaylg'}>Integrate with your favorite tools</Typography>
+                        <Typography variant="bodymd" style={{ color: '#374151' }}>
                             Connect RegiM with your most favorite sales and marketing tools
                         </Typography>
                    </div>
                 </StyledLeftColumn>
                 <StyledRightColumn>
                     <div>
-                        {mapToolsToCards(listOfTools)}
+                        {mapToolsToCards(listOfTools, isMobile)}
                     </div>
                 </StyledRightColumn>
             </TwoColumns>
@@ -55,6 +56,9 @@ const StyledTools = styled.section`
     @media (max-width: 768px) {
         background-position: top center;
         background-size: 100%;
+    }
+    @media (max-width: 500px) {
+        background-size: 90%;
     }
 `
 
@@ -86,6 +90,12 @@ const StyledLeftColumn = styled.div`
         @media (max-width: 768px) {
             text-align: center;
         }
+        @media (max-width: 500px) {
+            height: 160px;
+            margin-top: 3rem;
+            justify-content: space-evenly;
+
+        }
     }
 `
 
@@ -105,6 +115,9 @@ const StyledRightColumn = styled.div`
         align-items: flex-start;
         @media (max-width: 768px) {
             margin-top: -150px;
+        }
+        @media (max-width: 500px) {
+            margin-top: 0px;
         }
     }
 `
