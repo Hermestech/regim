@@ -129,7 +129,7 @@ export const Footer = () => {
                         {isMobile && <br/>}
                         <a href=""
                             style={{ color: '#E0F2FE'}}
-                        >hello@landify.design</a>
+                        > hello@landify.design</a>
                     </Typography>
                 </div>
             </InfoText>

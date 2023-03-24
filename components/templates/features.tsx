@@ -52,8 +52,8 @@ export const Features = () => {
             </FeatureTitle>
       <VideoWrapper>
         <Video controls >
-          <source src="https://www.youtube.com/watch?v=pE4ewM57H-4&t=1005s" type="https://www.youtube.com/watch?v=pE4ewM57H-4&t=1005s" />
-          <source src="/video.webm" type="video/webm" />
+          <source src="https://www.youtube.com/embed/oOu8ItOGgF8" type="video/mp4" />
+
         </Video>
         <Button>See it in action (2min)</Button>        
       </VideoWrapper>
