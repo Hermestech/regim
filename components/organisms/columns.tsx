@@ -22,7 +22,11 @@ export const Columns = () => {
                     </Typography>
                 <Typography
                     variant={isMobile ? 'body' : 'bodylg'}
-                    style={{ color: '#374151' }}    
+                        style={{
+                            color: '#374151',
+                            letterSpacing: '0.02em',
+                            lineHeight: '28px',
+                        }}    
                     >Manage your event registrations hassle free and without any dependency with the technical team. Isn`t it sounds amazing?
                 </Typography>
                     <Button
@@ -61,7 +65,11 @@ const StyledLeftColumn = styled.div`
         display: flex;
         flex-direction: column;
         max-width: 592px;
-        gap: 1.5rem;
+        gap: 2rem;
+
+        & > button {
+            margin-top: 1rem;
+        }
     }
     @media (max-width: 500px) {
         padding: 1rem;
